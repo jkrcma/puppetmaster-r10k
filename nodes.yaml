@@ -1,0 +1,107 @@
+---
+::defaults:
+  environment: production
+  parameters:
+    group: null
+
+
+build:
+  classes:
+    - role::build
+  parameters:
+    type: lxd
+
+/^dns(-\d{2})?$/:
+  classes:
+    - role::dns_server
+  parameters:
+    type: lxd
+
+docker:
+  classes:
+    - role::docker_runner
+  parameters:
+    type: lxd
+
+kodi:
+  classes:
+    - role::kodi
+  parameters:
+    type: lxd
+
+mediabox:
+  classes:
+    - role::media_box
+  parameters:
+    type: lxd
+
+monitor:
+  classes:
+    - role::monitor
+  parameters:
+    type: lxd
+
+nas:
+  classes:
+    - role::nas
+  parameters:
+    type: lxd
+
+/^pihole(-\d{2})?$/:
+  classes:
+    - role::pihole
+  parameters:
+    type: lxd
+    group: pihole
+
+prolink-overlay:
+  classes:
+    - role::noop
+  parameters:
+    type: lxd
+
+puppet5:
+  classes:
+    - role::puppetmaster
+  parameters:
+    type: lxd
+
+puppet-01:
+  classes:
+    - role::puppetmaster::primary
+  parameters:
+    type: lxd
+    group: puppet
+
+puppet-02:
+  classes:
+    - role::puppetmaster::secondary
+  parameters:
+    type: lxd
+    group: puppet
+
+/^rpi-k8s-\d{2}$/:
+  classes:
+    - role::k3s_master
+  parameters:
+    type: hw
+    group: rpi-k8s
+
+/^rpi-lxd-\d{2}$/:
+  classes:
+    - role::lxd_host
+  parameters:
+    type: hw
+    group: rpi-lxd
+
+smtp:
+  classes:
+    - role::smtp_relay
+  parameters:
+    type: lxd
+
+torrent:
+  classes:
+    - role::torrent_box
+  parameters:
+    type: lxd
