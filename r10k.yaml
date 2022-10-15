@@ -1,0 +1,6 @@
+---
+cachedir: /var/cache/r10k
+sources:
+  local:
+    remote: https://gitlab.com/home-taiku-cz/puppet-home
+    basedir: /etc/puppet/code/environments
