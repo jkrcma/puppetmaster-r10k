@@ -1,1 +1,1 @@
-# Empty for now
+mod 'puppetlabs/stdlib', '8.1.0'
