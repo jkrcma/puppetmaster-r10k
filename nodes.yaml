@@ -40,7 +40,6 @@ monitor:
     - role::monitor
   parameters:
     type: lxd
-  environment: loki_test
 
 nas:
   classes:
@@ -67,7 +66,6 @@ puppet5:
   parameters:
     type: lxd
     group: puppet
-  environment: loki_test
 
 puppet-01:
   classes:
