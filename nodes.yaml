@@ -65,6 +65,8 @@ puppet5:
     - role::puppetmaster
   parameters:
     type: lxd
+    group: puppet
+  environment: loki_test
 
 puppet-01:
   classes:
