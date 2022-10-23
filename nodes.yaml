@@ -66,6 +66,7 @@ puppet5:
   parameters:
     type: lxd
     group: puppet
+  environment: log2ram
 
 puppet-01:
   classes:
