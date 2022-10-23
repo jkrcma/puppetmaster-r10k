@@ -16,6 +16,7 @@ build:
     - role::dns_server
   parameters:
     type: lxd
+  environment: log2ram
 
 docker:
   classes:
@@ -40,6 +41,7 @@ monitor:
     - role::monitor
   parameters:
     type: lxd
+  environment: log2ram
 
 nas:
   classes:
