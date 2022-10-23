@@ -16,7 +16,6 @@ build:
     - role::dns_server
   parameters:
     type: lxd
-  environment: log2ram
 
 docker:
   classes:
@@ -41,7 +40,6 @@ monitor:
     - role::monitor
   parameters:
     type: lxd
-  environment: log2ram
 
 nas:
   classes:
@@ -68,7 +66,6 @@ puppet5:
   parameters:
     type: lxd
     group: puppet
-  environment: log2ram
 
 puppet-01:
   classes:
